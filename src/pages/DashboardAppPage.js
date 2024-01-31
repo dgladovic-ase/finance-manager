@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, Paper } from '@mui/material';
 // components
 import Iconify from '../components/iconify';
 // sections
@@ -21,6 +21,7 @@ import LatestTransactionWidget from '../components/LatestTransactionWidget';
 import CurrentSavingsWidget from '../components/CurrentSavingsWidget';
 import CashFlowWidget from '../components/CashFlowWidget';
 import ExpenseStructureWidget from '../components/ExpenseStructureWidget';
+import AddTransactionWidget from '../components/AddTransactionWidget';
 
 
 // ----------------------------------------------------------------------
@@ -39,31 +40,30 @@ export default function DashboardAppPage() {
           Hi, Welcome back
         </Typography>
 
-        <Grid container spacing={3}>
+        <div style={{display: 'flex', width: '100%',}}>
+          <div style={{width: '35%', marginRight: '16px'}}>
+            <ExpenseStructureWidget total={100.0}/>
+          </div>
+          <div style={{width: '60%'}}>
 
-        <Grid item xs={12} sm={6} md={3}>
+
+        <Grid container spacing={2}>
+
+          {/* <Grid item xs={6}>
+            <AddTransactionWidget/>
+          </Grid> */}
+
+          <Grid item xs={6}>
             <CashFlowWidget/>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={6}>
             <CurrentSavingsWidget/>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={6}>
             <LatestTransactionWidget/>
           </Grid>
-
-          <Grid item xs={12} sm={6} md={3}>
-            <ExpenseStructureWidget total={100.0}/>
-          </Grid>
-
-
-
-
-
-
-
-
 
           {/* <Grid item xs={12} md={6} lg={8}>
             <AppWebsiteVisits
@@ -227,6 +227,8 @@ export default function DashboardAppPage() {
             />
           </Grid> */}
         </Grid>
+        </div>
+        </div>
       </Container>
     </>
   );
