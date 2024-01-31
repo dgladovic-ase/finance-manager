@@ -69,16 +69,16 @@ export default function Nav({ openNav, onCloseNav }) {
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none">
           <StyledAccount>
-            <Avatar src={account.photoURL} alt="photoURL" />
+            {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
 
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
                 {/* {auth.user.split('@')[0]} */}
               </Typography>
 
-              {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {auth.user}
-              </Typography> */}
+              <Typography variant="h4" sx={{ color: 'green' }}>
+                Smart Spend 
+              </Typography>
             </Box>
           </StyledAccount>
         </Link>
@@ -106,9 +106,9 @@ export default function Nav({ openNav, onCloseNav }) {
             </Typography>
           </Box>
 
-          <Button onClick={handleClick} target="_blank" variant="contained">
+          {/* <Button onClick={handleClick} target="_blank" variant="contained">
             Logout
-          </Button>
+          </Button> */}
         </Stack>
       </Box>
     </Scrollbar>

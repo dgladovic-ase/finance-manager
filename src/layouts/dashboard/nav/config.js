@@ -1,4 +1,5 @@
 // component
+import { Home, FormatListBulleted, Add, History, AccountCircle, Receipt } from '@mui/icons-material';
 import SvgColor from '../../../components/svg-color';
 
 // ----------------------------------------------------------------------
@@ -17,20 +18,20 @@ const navConfig = [
   //   icon: icon('ic_user'),
   // },
   {
-    title: 'scan',
+    title: 'Scan a receipt',
     path: '/dashboard/scan',
     icon: icon('ic_scan'),
   },
   {
-    title: 'receipts',
+    title: 'Saved Receipts',
     path: '/dashboard/receipts',
     icon: icon('ic_scan'),
   },
-  // {
-  //   title: 'product',
-  //   path: '/dashboard/products',
-  //   icon: icon('ic_cart'),
-  // },
+  {
+    title: 'Transaction History',
+    path: '/dashboard/transactions',
+    icon: <FormatListBulleted/>,
+  },
   // {
   //   title: 'blog',
   //   path: '/dashboard/blog',
@@ -47,5 +48,13 @@ const navConfig = [
   //   icon: icon('ic_disabled'),
   // },
 ];
+
+
+// <BottomNavigationAction label="Home" icon={<Home />} onClick={() => navigate('/dashboard')} />
+// <BottomNavigationAction label="Receipts" icon={<Receipt />} onClick={() => navigate('/dashboard/receipts')} />
+// <BottomNavigationAction label="Add" icon={<Add fontSize="large" />} onClick={() => navigate('/dashboard/scan')} />
+// <BottomNavigationAction label="Transactions" icon={<FormatListBulleted onClick={() => navigate('/dashboard/transactions')}/>} />
+// <BottomNavigationAction label="Account" icon={<AccountCircle />} />
+
 
 export default navConfig;
