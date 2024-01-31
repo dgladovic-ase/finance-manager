@@ -13,7 +13,7 @@ const StandardTransaction = ({ template, content, contMeta, contMetaSub}) => {
     const defaultTemp = { name: 'Template 3' };
 
     const fontColor = 'black';
-    const bckCol = 'white'
+    const bckCol = 'rgb(240,240,240)'
 
     const [selectedTemplate, setSelectedTemplate] = useState('');
     const [abba, setAbba] = useState('');
@@ -38,7 +38,7 @@ const StandardTransaction = ({ template, content, contMeta, contMetaSub}) => {
 
     return (<>
 
-        <Card variant="outlined" sx={{ width:'100%', backgroundColor: bckCol, color: fontColor, marginTop: 2, border: 'solid 4px #afafaf' }}>
+        <Card sx={{ width:'100%', backgroundColor: bckCol, color: fontColor, marginTop: 2, boxShadow: 'none' }}>
             <CardHeader title={
                 <div style={{display:'flex', justifyContent:'flex-end'}}>
                     <span style={{}}>{categoryMeta.name ?? '------'}</span>

@@ -19,8 +19,8 @@ import categories from '../../_mock/categories';
 
 
 const steps = [
-  'Pick kind',
-  'Transaction info',
+  'Choose transaction type',
+  'Fill transaction info',
   'Summary',
 ];
 
@@ -134,7 +134,7 @@ export default function TransactionStep() {
   const handleSubmit = () => {
     console.log('SENT-PAYLOAD', persistentContent);
     const payload = { ...persistentContent, user_id:userId };
-    axios.post(`${liveUrl}/transactions/save`, payload).then(
+    axios.post(`${liveUrl}/transactions`, payload).then(
       (e) => {
         console.log('Saved successfully!');
         navigate('/dashboard/scan');
@@ -160,7 +160,7 @@ export default function TransactionStep() {
       </Stepper>
       {steps.map((label, index) => (
         <div key={label} style={{ display: index === activeStep ? 'block' : 'none' }}>
-          <Card variant="outlined" sx={{ width: '90%', maxWidth:'800px', margin:'auto', marginTop:'40px', marginBottom:'40px' }}>
+          <Card variant="outlined" sx={{ width: '90%', maxWidth:'450px', margin:'auto', marginTop:'40px', marginBottom:'40px' }}>
             <CardContent style={{paddingTop:'10px'}}>
                 <StandardTransaction template={template} content={content} />
                 {activeStep === 0 && <ZeroStep templates={templates} setTemplateContext={setTemplateContext}/> }

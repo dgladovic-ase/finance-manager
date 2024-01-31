@@ -191,7 +191,7 @@ const StartStep = ({ setTransactionContent, error, persistentContent }) => {
 
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
-            sx={{marginTop:'15px', marginBottom:'6px'}}
+            sx={{marginTop:'15px', marginBottom:'6px', width: '100%'}}
             name="date_of_birth"
             label="Transaction Date"
             ref={dateRef}
